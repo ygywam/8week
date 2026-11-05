@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {schedule} from '../public/schedule.mjs';import {exerciseGuides,getExerciseGuide} from '../public/exercise-info.mjs';
+test('every scheduled item has a home alternative and instruction',()=>{for(const start of ['2026-11-05','2028-02-27','2026-12-30']){const names=new Set(schedule(start).flatMap(d=>d.items.map(x=>x.name)));assert.equal(names.size,15);for(const n of names){const g=getExerciseGuide(n);assert.ok(g,n);assert.ok(g.equipment&&g.caution&&g.homeName&&g.homeEquipment);assert.ok(g.steps.length>=3&&g.homeSteps.length>=3);assert.ok(g.sources.length)}}assert.equal(Object.keys(exerciseGuides).length,15)});
