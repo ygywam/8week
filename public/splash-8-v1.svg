@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844">
+ <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#eaf3ff"/></linearGradient><linearGradient id="em" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2479df"/><stop offset="1" stop-color="#124b9f"/></linearGradient></defs>
+ <rect width="390" height="844" fill="url(#bg)"/>
+ <circle cx="379" cy="280" r="130" fill="#dcecff" opacity=".65"/>
+ <circle cx="-30" cy="545" r="112" fill="#e2efff"/>
+ <g font-family="Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+  <rect x="38" y="60" width="152" height="29" rx="14.5" fill="#deecff"/>
+  <text x="53" y="80" font-size="11" letter-spacing="1.4" font-weight="700" fill="#245eaa">8 WEEK ROUTINE</text>
+  <text x="38" y="148" font-size="34" font-weight="800" letter-spacing="-1.5" fill="#172c45">8주를, 나답게.</text>
+  <text x="39" y="182" font-size="15" font-weight="500" fill="#58718d">운동을 계획하고 하루씩 기록해요</text>
+  <rect x="53" y="244" width="284" height="284" rx="78" fill="#cbdff8" opacity=".42" transform="translate(0 8)"/>
+  <rect x="53" y="244" width="284" height="284" rx="78" fill="#f8fbff" stroke="#d4e3f5" stroke-width="2"/>
+  <g transform="translate(53 244) scale(.5546875)">
+   <path d="M256 248c-49-20-75-44-75-81 0-39 33-68 75-68s75 29 75 68c0 37-26 61-75 81Zm0 15c-56 21-88 51-88 91 0 45 38 77 88 77s88-32 88-77c0-40-32-70-88-91Z" fill="none" stroke="url(#em)" stroke-width="31" stroke-linecap="round" stroke-linejoin="round"/>
+   <path d="M132 256h248" stroke="#132e4c" stroke-width="27" stroke-linecap="round"/>
+   <path d="M155 209v94M127 222v68M357 209v94M385 222v68" stroke="#132e4c" stroke-width="23" stroke-linecap="round"/>
+   <path d="M213 256h86" stroke="#5ca7fb" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <text x="195" y="584" text-anchor="middle" font-size="23" font-weight="800" fill="#172c45">8주 루틴</text>
+  <text x="195" y="614" text-anchor="middle" font-size="15" font-weight="500" fill="#58718d">운동 · 걷기 · 체중 기록</text>
+  <g fill="#b9d3f2"><circle cx="132" cy="673" r="3.5"/><circle cx="150" cy="673" r="3.5"/><circle cx="168" cy="673" r="3.5"/><circle cx="186" cy="673" r="3.5"/><circle cx="204" cy="673" r="3.5"/><circle cx="222" cy="673" r="3.5"/><circle cx="240" cy="673" r="3.5"/><circle cx="258" cy="673" r="3.5"/></g>
+  <text x="195" y="765" text-anchor="middle" font-size="13" font-weight="600" letter-spacing=".2" fill="#6a829b">하루씩 쌓이는 변화</text>
+ </g>
+</svg>
