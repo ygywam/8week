@@ -10,3 +10,13 @@
 
 /* 영상은 재생할 때만 불러옵니다. */
 .exercise-video video{display:block;width:100%;height:auto;aspect-ratio:5/4;border-radius:12px;background:#e9f2fc;object-fit:contain}.exercise-video h3{margin-bottom:10px}.exercise-dialog-body .video-note{font-size:13px;line-height:1.5;color:var(--muted);margin:8px 0 0}
+
+/* 설정 안내와 탈퇴 확인 */
+.info-dialog .notice-body{line-height:1.65;overflow-wrap:anywhere}
+.info-dialog .notice-body h3{font-size:1.05rem;margin:1.35rem 0 .4rem}
+.info-dialog .notice-body p,.info-dialog .notice-body ol{margin:.5rem 0 1rem}
+.info-dialog .notice-body a{color:#1764cb;text-decoration:underline}
+.info-dialog .exercise-dialog-head h2{font-size:1.2rem;margin:0}
+.withdraw-error{color:#b42318;min-height:1.5em}
+.auth-notices{display:flex;flex-wrap:wrap;gap:.25rem 1rem;margin-top:1rem}
+.auth-notices button{border:0;background:transparent;color:var(--muted);padding:.65rem 0;font:inherit;font-size:.875rem;text-decoration:underline;cursor:pointer;min-height:44px}
