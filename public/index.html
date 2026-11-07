@@ -11,37 +11,24 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon-v2.png">
   <link rel="manifest" href="/manifest-v2.webmanifest">
   <link rel="stylesheet" href="/style.css">
-  <style>
-    #first-visit-splash[hidden]{display:none}
-    #first-visit-splash{position:fixed;inset:0;z-index:9999;background:#f3f8fe;pointer-events:none;opacity:1;transition:opacity .16s ease}
-    #first-visit-splash img{width:100%;height:100%;display:block;object-fit:contain}
-    #first-visit-splash.is-leaving{opacity:0}
-    @media (prefers-reduced-motion:reduce){#first-visit-splash{transition:none}}
-  </style>
+  <link rel="stylesheet" href="/splash.css">
   <script src="/config.js"></script>
   <script type="module" src="/app.mjs"></script>
 </head>
 <body>
-  <div id="first-visit-splash" hidden aria-hidden="true"><img alt=""></div>
-  <script>
-    (() => {
-      const splash = document.getElementById('first-visit-splash');
-      const key = '8week-first-visit-intro-v1';
-      try {
-        if (!matchMedia('(max-width: 600px) and (orientation: portrait)').matches || localStorage.getItem(key)) return;
-        localStorage.setItem(key, 'shown');
-        splash.querySelector('img').src = '/splash-8-v1.svg';
-        splash.hidden = false;
-        setTimeout(() => {
-          splash.classList.add('is-leaving');
-          setTimeout(() => splash.remove(), 180);
-        }, 1000);
-      } catch (_) {
-        // Storage may be unavailable in private or restricted browsing: never block the app.
-        splash.remove();
-      }
-    })();
-  </script>
+  <dialog id="first-visit-splash" aria-labelledby="splash-title" aria-describedby="splash-description">
+    <div class="splash-art">
+      <h1 id="splash-title" class="splash-sr-only">8주 루틴</h1>
+      <p id="splash-description" class="splash-sr-only">8주를, 나답게. 운동을 계획하고 하루씩 기록해요.</p>
+      <img alt="" width="390" height="844">
+    </div>
+    <div class="splash-controls">
+      <label class="splash-checkbox"><input type="checkbox" id="splash-hide-next"> <span>다시 안 보기</span></label>
+      <p id="splash-error" role="alert" hidden></p>
+      <button type="button" id="splash-confirm">확인</button>
+    </div>
+  </dialog>
+  <script src="/splash.js"></script>
   <div id="app"><div class="loading">불러오는 중…</div></div>
   <div id="toast" role="status" aria-live="polite"></div>
   <div id="guide-root"></div>

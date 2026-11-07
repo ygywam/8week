@@ -1,0 +1,33 @@
+#first-visit-splash {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #f3f8fe;
+  color: #152c49;
+  overflow: auto;
+}
+#first-visit-splash[open] { display: flex; flex-direction: column; align-items: center; }
+#first-visit-splash::backdrop { background: #f3f8fe; }
+.splash-art { flex: 1 1 auto; width: 100%; min-height: 0; }
+.splash-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.splash-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.splash-controls { box-sizing: border-box; flex: 0 0 auto; width: min(100%, 430px); padding: 0 24px max(16px, env(safe-area-inset-bottom)); }
+.splash-checkbox { display: flex; align-items: center; gap: 9px; min-height: 44px; font-size: 15px; cursor: pointer; }
+.splash-checkbox input { width: 20px; height: 20px; margin: 0; accent-color: #1764cb; }
+#splash-confirm { display: block; width: 100%; min-height: 48px; border: 0; border-radius: 12px; background: #1764cb; color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+#splash-confirm:focus-visible, .splash-checkbox input:focus-visible { outline: 3px solid #123c79; outline-offset: 3px; }
+#splash-error { margin: 4px 0 8px; color: #a11b1b; font-size: 14px; line-height: 1.4; }
+@media (max-height: 420px) { .splash-controls { padding-bottom: 8px; } .splash-checkbox { min-height: 36px; } }
+@media (max-height: 500px) and (min-aspect-ratio: 4/3) {
+  #first-visit-splash[open] { flex-direction: row; justify-content: center; }
+  .splash-art { flex: 1 1 50%; width: 50%; height: 100%; }
+  .splash-controls { width: min(45%, 360px); margin: auto; padding: 16px 24px; }
+}

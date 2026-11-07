@@ -3,15 +3,21 @@ import assert from 'node:assert/strict';
 import {readFile, access} from 'node:fs/promises';
 
 const read = p => readFile(new URL(`../public/${p}`, import.meta.url), 'utf8');
-test('intro is scoped to the first portrait mobile visit and does not block the app', async () => {
+test('intro requires confirmation and only hides after explicit choice', async () => {
   const html = await read('index.html');
-  assert.match(html, /8week-first-visit-intro-v1/);
-  assert.match(html, /max-width: 600px/);
-  assert.match(html, /orientation: portrait/);
-  assert.match(html, /pointer-events:none/);
-  assert.match(html, /prefers-reduced-motion:reduce/);
-  assert.match(html, /splash-8-v1\.svg/);
-  assert.match(html, /1000/);
+  const script = await read('splash.js');
+  const css = await read('splash.css');
+  assert.match(html, /src="\/splash\.js"/);
+  assert.doesNotMatch(html, /<script\s*>/);
+  assert.match(html, /id="splash-hide-next"/);
+  assert.match(html, /다시 안 보기/);
+  assert.match(html, /id="splash-confirm">확인/);
+  assert.match(script, /8week-splash-do-not-show-v1/);
+  assert.match(script, /checkbox\.checked/);
+  assert.match(script, /splash\.showModal\(\)/);
+  assert.doesNotMatch(script, /matchMedia|setTimeout/);
+  assert.match(script, /splash-8-v1\.svg/);
+  assert.match(css, /100dvh/);
   await access(new URL('../public/splash-8-v1.svg', import.meta.url));
 });
 test('manifest icons exist and use versioned paths', async () => {
